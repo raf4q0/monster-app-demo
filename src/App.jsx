@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+import SearchBox from './components/search-box/search-box'
+import CardList from './components/card-list/card-list'
+
 const App = () => {
   const [users, setUsers] = useState([])
+  const [searchField, setSearchField] = useState('')
 
   useEffect(() => {
     console.log('se invoca el useEffect')
@@ -12,17 +16,19 @@ const App = () => {
 
   }, [])
 
+  const filteredUsers = users.filter(user => {
+    return user.name.toLowerCase().includes(searchField.toLocaleLowerCase())
+  })
+
+  const onSearchChangeHandler = (event) => {
+    console.log('invocando onchange desde el componente searchbox')
+    setSearchField(event.target.value)
+  }
+
   return (
     <div className="App">
-      {users.map(user =>
-       {
-        const { id, name, email } = user
-        
-        return (
-          <h1 key={id}>Hola mi nombre es {name} y correo es {email} años</h1>
-        )
-       }
-       )}
+      <SearchBox onSearchChange={onSearchChangeHandler} />
+      <CardList users={filteredUsers} />
     </div>
   )
 }
