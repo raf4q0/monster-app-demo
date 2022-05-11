@@ -1,24 +1,16 @@
+import Card from '../card/card'
 import './card-list.styles.css'
 
 const CardList = ({ users }) => {
-    return (
-        <div className='card-list'>
-            {users.map(user =>
-                {
-                    const { id, name, email } = user
-
-                    return (
-                    <div key={id} className='card-container'>
-                        <img alt={`user ${name}`} src={`https://robohash.org/${id}?set=set2&size=180x180`} />
-                        <h2>{name}</h2>
-                        <p>{email}</p>
-                    </div>
-
-                    )
-                }
-            )}
-        </div>
-    )
+	return (
+		<div className='card-list'>
+			{users.map(user =>
+				{
+					return <Card key={user.id} user={user} />
+				}
+			)}
+		</div>
+	)
 }
 
 export default CardList
