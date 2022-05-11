@@ -1,14 +1,16 @@
+import { Fragment } from 'react'
+import { Outlet, Link } from 'react-router-dom'
 
 const Navigation = () => {
     return (
-        <div>
+        <Fragment>            
             <div>Logo</div>
-            <div>
-                <p>Home</p>
-                <p>About</p>
-            </div>
-
-        </div>
+            <nav>              
+                <Link to='/'>Home</Link>
+                <Link to='/about'>About</Link>
+            </nav>
+            <Outlet />            
+        </Fragment>
     )
 }
 
