@@ -7,7 +7,6 @@ const Home = () => {
   const [searchField, setSearchField] = useState("");
   const [filteredUsers, setFilteredUsers] = useState(users);
 
-  console.log("entro componente HOME");
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
@@ -35,7 +34,7 @@ const Home = () => {
   };
 
   return (
-    <div className="App">
+    <div className="App" style={{ border: "2px solid red" }}>
       <SearchBox onSearchChange={onSearchChangeHandler} />
       <CardList users={filteredUsers} />
     </div>

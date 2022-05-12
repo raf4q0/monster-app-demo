@@ -3,7 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 
 import CrwnLogo from "../../assets/crown.svg?component";
 
-const Navigation = () => {
+const Layout = () => {
   return (
     <Fragment>
       <CrwnLogo />
@@ -11,9 +11,14 @@ const Navigation = () => {
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
       </nav>
-      <Outlet />
+      <div style={{ display: "flex" }}>
+        <div>Sidebar</div>
+        <div style={{ marginLeft: "20px" }}>
+          <Outlet />
+        </div>
+      </div>
     </Fragment>
   );
 };
 
-export default Navigation;
+export default Layout;

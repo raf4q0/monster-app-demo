@@ -5,6 +5,7 @@ const CardList = ({ users }) => {
   return (
     <div className="card-list">
       {users.map((user) => {
+        console.log(user);
         return <Card key={user.id} user={user} />;
       })}
     </div>
