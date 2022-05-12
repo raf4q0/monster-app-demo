@@ -1,15 +1,14 @@
-import './search-box.styles.css'
+import "./search-box.styles.css";
 
-const SearchBox = (props) => {
-    console.log(props)
-    return (
-        <input
-            className='search-box'
-            type='search'
-            placeholder='Buscar...'
-            onChange={props.onSearchChange} 
-        />
-    )
-}
+const SearchBox = ({ onSearchChange }) => {
+  return (
+    <input
+      className="search-box"
+      type="search"
+      placeholder="Buscar..."
+      onChange={onSearchChange}
+    />
+  );
+};
 
-export default SearchBox
+export default SearchBox;
