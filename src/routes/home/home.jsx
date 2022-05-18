@@ -34,7 +34,7 @@ const Home = () => {
   };
 
   return (
-    <div className="App" style={{ border: "2px solid red" }}>
+    <div className="App">
       <SearchBox onSearchChange={onSearchChangeHandler} />
       <CardList users={filteredUsers} />
     </div>
