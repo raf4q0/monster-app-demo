@@ -13,7 +13,7 @@ const Layout = () => {
       </nav>
       <div style={{ display: "flex" }}>
         <div>Sidebar</div>
-        <div style={{ marginLeft: "20px" }}>
+        <div style={{ marginLeft: "25px" }}>
           <Outlet />
         </div>
       </div>
