@@ -12,7 +12,6 @@ const Layout = () => {
         <Link to="/about">About</Link>
       </nav>
       <div style={{ display: "flex" }}>
-        <div>Sidebar</div>
         <div style={{ marginLeft: "25px" }}>
           <Outlet />
         </div>
